@@ -21,8 +21,8 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "docs",
-            "baseHref": "/job-tracker-new/",
-            "deployUrl": "/job-tracker-new/",
+            "baseHref": "/job-tracker/",
+            "deployUrl": "/job-tracker/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
