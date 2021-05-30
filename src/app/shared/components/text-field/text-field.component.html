@@ -1,0 +1,3 @@
+<label *ngIf="label" class="label" [for]="id">{{label}}</label>
+<input *ngIf="type !== 'textarea'" class="input" [id]="id" [formControl]="control" [name]="name" [type]="type" />
+<textarea *ngIf="type === 'textarea'" class="input textarea" [id]="id" [formControl]="control" [name]="name"></textarea>

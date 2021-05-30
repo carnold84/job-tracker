@@ -1,0 +1,102 @@
+<app-dialog
+  *ngIf="showConfirmDialog"
+  (confirm)="onDeleteConfirm()"
+  (cancel)="onDeleteCancel()"
+  message="Are you sure you want to delete {{ job?.title }}?"
+  title="Delete {{ job?.title }}?"
+></app-dialog>
+
+<app-header [back]="{ label: 'Jobs', link: '/' }" [title]="job && job?.title">
+  <button controls (click)="onDelete()" class="icon-btn">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path
+        d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+      />
+    </svg>
+  </button>
+  <button
+    controls
+    (click)="onEdit()"
+    class="icon-btn"
+    style="margin: 0 0 0 15px"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+      />
+      <path d="M0 0h24v24H0z" fill="none" />
+    </svg>
+  </button>
+</app-header>
+
+<main *ngIf="job === undefined" class="page-content">Loading...</main>
+
+<main *ngIf="job && canEdit === false" class="page-content">
+  <h3 class="sub-title">{{ job.company }}</h3>
+  <status-picker
+    (change)="onStatusChange($event)"
+    [value]="job.status"
+  ></status-picker>
+  <a class="link" [href]="job.link" target="_blank">{{ job.link }}</a>
+  <p class="meta">{{ job.dueDate }}</p>
+  <p class="notes">{{ job.notes }}</p>
+</main>
+
+<main *ngIf="job && canEdit === true" class="page-content">
+  <text-field
+    id="job-title"
+    label="Title"
+    name="title"
+    [control]="titleControl"
+  ></text-field>
+  <text-field
+    id="job-company"
+    label="Company"
+    name="company"
+    [control]="companyControl"
+  ></text-field>
+  <status-picker
+    (change)="onStatusSelect($event)"
+    [value]="status"
+  ></status-picker>
+  <text-field
+    id="job-link"
+    label="Link"
+    name="link"
+    [control]="linkControl"
+  ></text-field>
+  <text-field
+    id="job-dueDate"
+    label="Due Date"
+    name="dueDate"
+    [control]="dueDateControl"
+  ></text-field>
+  <text-field
+    id="job-notes"
+    label="Notes"
+    name="notes"
+    type="textarea"
+    [control]="notesControl"
+    style="height: 200px"
+  ></text-field>
+</main>
+
+<footer *ngIf="job && canEdit === true" class="page-footer">
+  <div class="page-buttons">
+    <app-button (click)="onEditCancel()" style="margin: 0 10px 0 0"
+      >Cancel</app-button
+    >
+    <app-button (click)="onUpdate()" [isPrimary]="true">Update</app-button>
+  </div>
+</footer>

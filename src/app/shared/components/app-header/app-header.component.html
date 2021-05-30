@@ -1,0 +1,20 @@
+<div class="bg"></div>
+<div class="top-content">
+  <a *ngIf="back" class="back-btn" routerLink="/">
+    <div class="back-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z" />
+        <path fill="none" d="M0 0h24v24H0z" />
+      </svg>
+    </div>
+    <p class="back-label">{{back.label}}</p>
+  </a>
+  <div class="controls">
+    <ng-content select="[controls]"></ng-content>
+  </div>
+</div>
+<div class="bottom-content">
+  <div class="title">
+    {{title}}
+  </div>
+</div>

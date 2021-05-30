@@ -1,0 +1,67 @@
+:host {
+  background-color: var(--app-header-bg);
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  height: 150px;
+  justify-content: space-between;
+  padding: 25px 25px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.bg {
+  background-image: url("../../../../assets/bg-pattern.png");
+  height: 100%;
+  left: 0;
+  mask-image: linear-gradient(200deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 80%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.top-content {
+  justify-content: space-between;
+  display: flex;
+  z-index: 1;
+}
+
+.bottom-content {
+  justify-content: space-between;
+  display: flex;
+  z-index: 2;
+}
+
+.controls {
+  align-items: flex-end;
+  display: flex;
+  fill: var(--app-header-color);
+}
+
+.title {
+  color: var(--app-header-color);
+  font-size: 2.5em;
+  line-height: 1em;
+}
+
+.back-btn {
+  display: flex;
+  text-decoration: none;
+}
+
+.back-icon {
+  align-items: center;
+  display: flex;
+  fill: var(--app-header-color);
+  margin: 0;
+}
+
+.back-label {
+  color: var(--app-header-color);
+  font-size: 1.7em;
+  font-weight: 300;
+  line-height: 1.2em;
+  margin: 0;
+}

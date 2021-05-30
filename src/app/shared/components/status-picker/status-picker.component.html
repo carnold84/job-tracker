@@ -1,0 +1,38 @@
+<div (clickOutside)="onClose()" [clickOutsideEnabled]="isOpen" class="wrapper">
+    <button (click)="onClick()" class="status-item-btn">
+        <p class="label">{{ value | titlecase }}</p>
+        <status-icon [status]="value"></status-icon>
+    </button>
+    <ul class="status-list" [class.is-open]="isOpen">
+        <li class="status-item">
+            <button (click)="onSelect(STATUSES.ACTIVE)" class="status-item-btn">
+                <p class="label">Active</p>
+                <status-icon [status]="STATUSES.ACTIVE"></status-icon>
+            </button>
+        </li>
+        <li class="status-item">
+            <button (click)="onSelect(STATUSES.CLOSED)" class="status-item-btn">
+                <p class="label">Closed</p>
+                <status-icon [status]="STATUSES.CLOSED"></status-icon>
+            </button>
+        </li>
+        <li class="status-item">
+            <button (click)="onSelect(STATUSES.FAILED)" class="status-item-btn">
+                <p class="label">Failed</p>
+                <status-icon [status]="STATUSES.FAILED"></status-icon>
+            </button>
+        </li>
+        <li class="status-item">
+            <button (click)="onSelect(STATUSES.SUCCESS)" class="status-item-btn">
+                <p class="label">Success</p>
+                <status-icon [status]="STATUSES.SUCCESS"></status-icon>
+            </button>
+        </li>
+        <li class="status-item">
+            <button (click)="onSelect(STATUSES.WAITING)" class="status-item-btn">
+                <p class="label">Waiting</p>
+                <status-icon [status]="STATUSES.WAITING"></status-icon>
+            </button>
+        </li>
+    </ul>
+</div>

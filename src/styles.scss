@@ -1,0 +1,162 @@
+:root {
+  --primary1: #1e70ce;
+  --primary2: #418adf;
+  --text1: #222222;
+  --text-alt1: #ffffff;
+  --app-header-bg: var(--primary1);
+  --app-header-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--text1);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--primary1);
+  cursor: pointer;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.app-logo {
+  color: #555555;
+  font-size: 1.8em;
+  line-height: 1.1em;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.message-box {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 15px;
+
+  .text {
+    font-size: 1.2em;
+    font-weight: 400;
+  }
+}
+
+.button {
+  align-items: center;
+  background-color: #ffffff;
+  border: #e5e5e5 solid 1px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  color: #333333;
+  cursor: pointer;
+  display: flex;
+  font-size: 1em;
+  font-weight: 400;
+  justify-content: center;
+  padding: 10px 25px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #f3f3f3;
+    border: #cccccc solid 1px;
+  }
+
+  &.is-primary {
+    background-color: var(--primary1);
+    border: var(--primary1) solid 1px;
+    color: #ffffff;
+
+    &:hover {
+      background-color: var(--primary2);
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+    outline: 0;
+  }
+}
+
+.page-header {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  padding: 30px 30px 20px;
+
+  .control {
+    display: flex;
+  }
+
+  .back-btn {
+    align-items: center;
+    display: flex;
+    fill: #777777;
+    margin: 0px 5px 0 0;
+  }
+}
+
+.page-title {
+  color: #555555;
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+.page-content {
+  flex-grow: 1;
+  padding: 175px 25px 75px;
+  position: relative;
+  width: 100%;
+}
+
+.page-footer {
+  align-items: center;
+  background-color: #ffffff;
+  border-top: #e6e6e6 solid 1px;
+  bottom: 0;
+  display: flex;
+  flex-shrink: 0;
+  height: 50px;
+  justify-content: space-around;
+  left: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.page-buttons {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+
+  > * {
+    margin: 0 0 0 10px;
+  }
+}
+
+.icon-btn {
+  align-items: center;
+  background: none;
+  border: none;
+  display: flex;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

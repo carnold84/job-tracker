@@ -1,0 +1,57 @@
+:host {
+  display: inline-flex;
+  margin: 0 0 20px;
+  position: relative;
+}
+
+.status-item-btn {
+  align-items: center;
+  background-color: #ffffff;
+  border: #eeeeee solid 1px;
+  border-radius: 18px;
+  display: flex;
+  height: 36px;
+  justify-content: space-between;
+  padding: 0 7px 0 15px;
+  width: 110px;
+
+  &:hover {
+    background-color: #f6f6f6;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+    outline: 0;
+  }
+
+  status-icon {
+    fill: var(--primary1);
+    margin: 2px 0 0;
+  }
+}
+
+.label {
+  margin: 0 6px 0 0;
+}
+
+.status-list {
+  display: none;
+  flex-direction: column;
+  left: 120px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  transform: translate3d(0, calc(-50% + 23px), 0);
+  z-index: 1;
+
+  &.is-open {
+    display: flex;
+  }
+}
+
+.status-item {
+  align-items: center;
+  display: flex;
+  margin: 0 0 10px;
+}

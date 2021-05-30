@@ -1,0 +1,36 @@
+<app-header title="Job Tracker">
+  <a routerLink="/" class="app-logo" routerLinkActive="active">Job Tracker</a>
+</app-header>
+
+<main class="page-content">
+  <p *ngIf="jobs === undefined">Loading...</p>
+
+  <div *ngIf="jobs && jobs.length === 0" class="message-box">
+    <p class="text">You're not tracking any jobs.</p>
+    <a class="button" routerLink="/create-job">Add One</a>
+  </div>
+
+  <div *ngIf="jobs && jobs.length > 0">
+    <a *ngFor="let job of jobs" class="job-item" [routerLink]="'/' + job.id">
+      <div class="job-item-text">
+        <h3 class="job-item-title">{{ job.title }}</h3>
+        <h4 class="job-item-sub-title">{{ job.company }}</h4>
+      </div>
+      <status-icon status="job.status"></status-icon>
+    </a>
+  </div>
+</main>
+
+<footer class="page-footer">
+  <a class="create-link" routerLink="/create-job">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+      <path d="M0 0h24v24H0z" fill="none" />
+    </svg>
+  </a>
+</footer>
