@@ -1,5 +1,7 @@
 :host {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
   height: 100%;
+  overflow: auto;
   position: absolute;
   width: 100%;
   z-index: 1;
