@@ -1,51 +1,53 @@
-<app-header
-  [back]="{ label: 'Jobs', link: '/' }"
-  title="Create Job"
-></app-header>
+<div class="page-wrapper">
+  <app-header
+    [back]="{ label: 'Jobs', link: '/' }"
+    title="Create Job"
+  ></app-header>
 
-<main class="page-content">
-  <text-field
-    id="create-job-title"
-    label="Title"
-    name="title"
-    [control]="titleControl"
-    style="font-size: 20px"
-  ></text-field>
-  <text-field
-    id="create-job-company"
-    label="Company"
-    name="company"
-    [control]="companyControl"
-  ></text-field>
-  <text-field
-    id="create-job-link"
-    label="Link"
-    name="link"
-    [control]="linkControl"
-  ></text-field>
-  <status-picker
-    (change)="onStatusSelect($event)"
-    [value]="status"
-  ></status-picker>
-  <text-field
-    id="create-job-due-date"
-    label="Due Date"
-    name="due-date"
-    [control]="dueDateControl"
-  ></text-field>
-  <text-field
-    id="create-job-notes"
-    label="Notes"
-    name="notes"
-    [control]="notesControl"
-    style="height: 150px"
-    type="textarea"
-  ></text-field>
-</main>
+  <main class="page-content">
+    <text-field
+      id="create-job-title"
+      label="Title"
+      name="title"
+      [control]="titleControl"
+      style="font-size: 20px"
+    ></text-field>
+    <text-field
+      id="create-job-company"
+      label="Company"
+      name="company"
+      [control]="companyControl"
+    ></text-field>
+    <text-field
+      id="create-job-link"
+      label="Link"
+      name="link"
+      [control]="linkControl"
+    ></text-field>
+    <status-picker
+      (change)="onStatusSelect($event)"
+      [value]="status"
+    ></status-picker>
+    <text-field
+      id="create-job-due-date"
+      label="Due Date"
+      name="due-date"
+      [control]="dueDateControl"
+    ></text-field>
+    <text-field
+      id="create-job-notes"
+      label="Notes"
+      name="notes"
+      [control]="notesControl"
+      style="height: 150px"
+      type="textarea"
+    ></text-field>
+  </main>
 
-<footer class="page-footer">
-  <div class="page-buttons">
-    <a class="button" routerLink="/">Cancel</a>
-    <app-button (click)="onCreate()" [isPrimary]="true">Create</app-button>
-  </div>
-</footer>
+  <footer class="page-footer">
+    <div class="page-buttons">
+      <a class="button" routerLink="/">Cancel</a>
+      <app-button (click)="onCreate()" [isPrimary]="true">Create</app-button>
+    </div>
+  </footer>
+</div>

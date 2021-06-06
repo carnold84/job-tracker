@@ -7,6 +7,12 @@ import { Job, JobResponse } from './types';
   providedIn: 'root',
 })
 export class JobsService {
+  // included for the demo api
+  // TODO: make conditional at build time when real api is added
+  init = async () => {
+    return await api.init();
+  };
+
   getJobs = async (): Promise<Array<Job>> => {
     return await api.getJobs();
   };

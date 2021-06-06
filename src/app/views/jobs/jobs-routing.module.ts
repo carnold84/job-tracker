@@ -4,27 +4,26 @@ import { JobsListComponent } from './components/jobs-list/jobs-list.component';
 import { JobsCreateComponent } from './components/jobs-create/jobs-create.component';
 import { JobComponent } from './components/job/job.component';
 
-
 const routes: Routes = [
   {
     component: JobsListComponent,
-    data: { animation: 'JobList' },
-    path: ''
+    data: { animationState: 'JobsList' },
+    path: '',
   },
   {
     component: JobsCreateComponent,
-    data: { animation: 'CreateJob' },
-    path: 'create-job'
+    data: { animationState: 'JobCreate' },
+    path: 'create-job',
   },
   {
     component: JobComponent,
-    data: { animation: 'Job' },
-    path: ':id'
-  }
+    data: { animationState: 'Job' },
+    path: ':id',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class JobsRoutingModule { }
+export class JobsRoutingModule {}
